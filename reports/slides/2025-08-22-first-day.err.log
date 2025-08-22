@@ -36,17 +36,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-fhat = fft(f)
-scatter([abs.(fhat), abs.(fftshift(fhat))], marker=[:square :circle])
+f1(x) = exp(x) - 1
+y1 = f1(1e-8)]
 ------------------
 
 
-UndefVarError: `fft` not defined in `Main`
-Suggestion: check for spelling errors or missing imports.
-Hint: a global variable of this name may be made accessible by importing AbstractFFTs in the current active module Main
-Hint: a global variable of this name may be made accessible by importing FFTW in the current active module Main
+ParseError:
+[90m# Error @ [0;0m]8;;file:///home/jed/cu/nc-25f/class/slides/In[6]#2:14\[90mIn[6]:2:14[0;0m]8;;\
+f1(x) = exp(x) - 1
+y1 = f1(1e-8)[48;2;120;70;70m][0;0m
+[90m#            ╙ ── [0;0m[91mextra tokens after end of expression[0;0m
 
 Stacktrace:
  [1] top-level scope
-   @ In[7]:1
+   @ In[6]:2
 

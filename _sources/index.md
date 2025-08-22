@@ -5,8 +5,8 @@ Welcome to **Principles of Numerical Computation**, CSCI-5606
 :::{admonition} Logistics
 * CSCI-5606 Meeting Time: MWF 10:10-11:00 in DLC 1B20
   * [Canvas page](https://canvas.colorado.edu/courses/122409)
-  * [Join Zulip](https://cu-numcomp.zulipchat.com/join/ukd6chvjlok245dx5gwq2nbi/)
-* Office hours: [Choose a time](https://app.simplymeet.me/jed/numcomp) (individual or group)
+* Drop-in hours: [Choose a time](https://www.when2meet.com/?31809722-2SQvf)
+* [Make an appointment](https://app.simplymeet.me/jed/numcomp)) (individual or group)
 :::
 
 :::{admonition} Resources
