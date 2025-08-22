@@ -1,11 +1,11 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Numerical Computation
+title: Principles of Numerical Computation
 author: Jed Brown
 logo: img/cu-numcomp.svg
 
-exclude_patterns: [VENV/*, README.md, activities/*, nbgrader/*, portfolio/*]
+exclude_patterns: [VENV/*, README.md, activities/*, nbgrader/*, portfolio/*, slides.bak/*]
 
 parse:
   myst_enable_extensions:
@@ -31,7 +31,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/cu-numcomp/spring23
+  url: https://github.com/cu-numcomp/fall25-grad
   branch: main
 
 # Add GitHub buttons to your book
