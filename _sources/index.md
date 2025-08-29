@@ -5,7 +5,7 @@ Welcome to **Principles of Numerical Computation**, CSCI-5606
 :::{admonition} Logistics
 * CSCI-5606 Meeting Time: MWF 10:10-11:00 in DLC 1B20
   * [Canvas page](https://canvas.colorado.edu/courses/122409)
-* Drop-in hours: [Choose a time](https://www.when2meet.com/?31809722-2SQvf)
+* Drop-in hours (ECOT 824): Monday 9-10am, Friday 3-4pm.
 * [Make an appointment](https://app.simplymeet.me/jed/numcomp)) (individual or group)
 :::
 
