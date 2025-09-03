@@ -44,3 +44,47 @@ In a new browser tab, open https://github.com/login/device and enter the 8-chara
 ### 5. Clone with the Git sidebar
 You can now clone with the Git sidebar or `gh repo clone`.
 ![](img/coding.csel.io-git-clone.png)
+
+## Installing IJulia locally
+
+### 1. Install Julia
+
+If you use a package manager, you can get Julia that way, otherwise install `juliaup` (the Julia version manager/dispatcher) by following the [official install instructions](https://julialang.org/install/).
+
+### 2. Install IJulia
+
+[IJulia](https://github.com/JuliaLang/IJulia.jl) includes the Jupyter system (which is implemented in Python) and connects it to the Julia "kernel".
+You can install it by running `julia`, which will give you a Julia prompt:
+
+```
+julia>
+```
+
+Press the `]` key to enter the packaging prompt, which will look like:
+
+```
+(@v1.11) pkg>
+```
+
+Enter `add IJulia` to install:
+
+```
+(@v1.11) pkg> add IJulia
+```
+
+If this completes with errors, you're done. Pressing the backspace key will return you to a standard `julia>` prompt, and you can enter the notebook using
+
+```
+julia> using IJulia
+julia> notebook()
+```
+
+This will open a browser window.
+
+### 3. Install Plots and any other necessary packages
+
+Our work will sometimes use community packages that are not shipped with the Julia base system.
+The first of these is [Plots](https://docs.juliaplots.org/), which you can install with
+```
+(@v1.11) pkg> add Plots
+```

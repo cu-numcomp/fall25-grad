@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -193,6 +193,64 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="slides/2025-08-25-functions.html">2025-08-25 Functions</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="slides/2025-08-27-conditioning.html">2025-08-27 Conditioning and errors</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="slides/2025-08-29-stability.html">2025-08-29 Stability</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="slides/2025-09-03-rootfinding.html">2025-09-03 Rootfinding</a></li>
 
 
 
@@ -414,6 +472,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-with-the-git-sidebar">5. Clone with the Git sidebar</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-ijulia-locally">Installing IJulia locally</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-julia">1. Install Julia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ijulia">2. Install IJulia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-plots-and-any-other-necessary-packages">3. Install Plots and any other necessary packages</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -475,6 +539,43 @@ document.write(`
 <h3>5. Clone with the Git sidebar<a class="headerlink" href="#clone-with-the-git-sidebar" title="Link to this heading">#</a></h3>
 <p>You can now clone with the Git sidebar or <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">repo</span> <span class="pre">clone</span></code>.
 <img alt="" src="_images/coding.csel.io-git-clone.png" /></p>
+</section>
+</section>
+<section id="installing-ijulia-locally">
+<h2>Installing IJulia locally<a class="headerlink" href="#installing-ijulia-locally" title="Link to this heading">#</a></h2>
+<section id="install-julia">
+<h3>1. Install Julia<a class="headerlink" href="#install-julia" title="Link to this heading">#</a></h3>
+<p>If you use a package manager, you can get Julia that way, otherwise install <code class="docutils literal notranslate"><span class="pre">juliaup</span></code> (the Julia version manager/dispatcher) by following the <a class="reference external" href="https://julialang.org/install/">official install instructions</a>.</p>
+</section>
+<section id="install-ijulia">
+<h3>2. Install IJulia<a class="headerlink" href="#install-ijulia" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://github.com/JuliaLang/IJulia.jl">IJulia</a> includes the Jupyter system (which is implemented in Python) and connects it to the Julia “kernel”.
+You can install it by running <code class="docutils literal notranslate"><span class="pre">julia</span></code>, which will give you a Julia prompt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Press the <code class="docutils literal notranslate"><span class="pre">]</span></code> key to enter the packaging prompt, which will look like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nd">@v1</span><span class="mf">.11</span><span class="p">)</span> <span class="n">pkg</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Enter <code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">IJulia</span></code> to install:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nd">@v1</span><span class="mf">.11</span><span class="p">)</span> <span class="n">pkg</span><span class="o">&gt;</span> <span class="n">add</span> <span class="n">IJulia</span>
+</pre></div>
+</div>
+<p>If this completes with errors, you’re done. Pressing the backspace key will return you to a standard <code class="docutils literal notranslate"><span class="pre">julia&gt;</span></code> prompt, and you can enter the notebook using</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">julia</span><span class="o">&gt;</span> <span class="n">using</span> <span class="n">IJulia</span>
+<span class="n">julia</span><span class="o">&gt;</span> <span class="n">notebook</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This will open a browser window.</p>
+</section>
+<section id="install-plots-and-any-other-necessary-packages">
+<h3>3. Install Plots and any other necessary packages<a class="headerlink" href="#install-plots-and-any-other-necessary-packages" title="Link to this heading">#</a></h3>
+<p>Our work will sometimes use community packages that are not shipped with the Julia base system.
+The first of these is <a class="reference external" href="https://docs.juliaplots.org/">Plots</a>, which you can install with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nd">@v1</span><span class="mf">.11</span><span class="p">)</span> <span class="n">pkg</span><span class="o">&gt;</span> <span class="n">add</span> <span class="n">Plots</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -549,6 +650,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-gh-auth-login">3. Run <code class="docutils literal notranslate"><span class="pre">gh</span> <span class="pre">auth</span> <span class="pre">login</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-https-github-com-login-device">4. Open https://github.com/login/device</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-with-the-git-sidebar">5. Clone with the Git sidebar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-ijulia-locally">Installing IJulia locally</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-julia">1. Install Julia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-ijulia">2. Install IJulia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-plots-and-any-other-necessary-packages">3. Install Plots and any other necessary packages</a></li>
 </ul>
 </li>
 </ul>
