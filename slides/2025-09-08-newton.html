@@ -301,6 +301,23 @@
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="2025-09-12-polynomials.html">2025-09-12 Polynomials</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </ul>
 </details></li>
 </ul>
@@ -859,8 +876,8 @@ Suppose that there exists a fixed point <span class="math notranslate nohighligh
 \[ g(x_k) = g(x_*) + g'(x_*)(x_k - x_*) + O((x_k-x_*)^2) \]</div>
 
 and thus</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f71cb33c-5bd0-441a-ac48-2664f1671034">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f71cb33c-5bd0-441a-ac48-2664f1671034" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1e296d44-45af-4181-821c-f9fabd0cc4d4">
+<span class="eqno">(1)<a class="headerlink" href="#equation-1e296d44-45af-4181-821c-f9fabd0cc4d4" title="Permalink to this equation">#</a></span>\[\begin{align}
 x_{k+1} - x_* &amp;= g(x_k) - g(x_*) \\
 &amp;= g'(x_*) (x_k - x_*) + O((x_k - x_*)^2).
 \end{align}\]</div>
@@ -895,8 +912,8 @@ for some positive constants <span class="math notranslate nohighlight">\(c_1,c_2
 <div class="math notranslate nohighlight">
 \[ \lim_{h\to 0} \frac{\operatorname{term}(h)}{h^2} &lt; \infty . \]</div>
 <p>Big <span class="math notranslate nohighlight">\(O\)</span> terms can be manipulated as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-00492a23-298f-4529-94fd-fbd2605bf647">
-<span class="eqno">(2)<a class="headerlink" href="#equation-00492a23-298f-4529-94fd-fbd2605bf647" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-be2d1a14-1859-4282-b0b4-b939fb62d8cc">
+<span class="eqno">(2)<a class="headerlink" href="#equation-be2d1a14-1859-4282-b0b4-b939fb62d8cc" title="Permalink to this equation">#</a></span>\[\begin{align}
 h O(h^k) &amp;= O(h^{k+1}) \\
 O(h^k)/h &amp;= O(h^{k-1}) \\
 c O(h^k) &amp;= O(h^k) \\
@@ -1534,8 +1551,8 @@ More at <a class="reference external" href="https://en.wikipedia.org/wiki/Fast_i
 
 but this would require a division.</p>
 <p>Newton’s method is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5bc0b0f1-2a50-4906-bff5-892f91882e6f">
-<span class="eqno">(3)<a class="headerlink" href="#equation-5bc0b0f1-2a50-4906-bff5-892f91882e6f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-de021ffa-b868-4de8-93ef-36d942821cbb">
+<span class="eqno">(3)<a class="headerlink" href="#equation-de021ffa-b868-4de8-93ef-36d942821cbb" title="Permalink to this equation">#</a></span>\[\begin{align}
 y_{k+1} &amp;= y_k - \frac{f(y_k)}{f'(y_k)} \\
 &amp;= y_k - \frac{1/y_k^2 - x}{-2/y_k^3} \\
 &amp;= y_k + \frac 1 2 (y_k - x y_k^3) \\
