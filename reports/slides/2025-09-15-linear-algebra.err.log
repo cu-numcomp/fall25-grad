@@ -36,15 +36,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Dot product
-A[2, :]' * x
+A = rand(4, 4)
+B = A' * A - A * A'
+@show B
+det(A)
 ------------------
 
+----- stdout -----
+B = [-1.3677429708982876 -0.5924183944939979 -0.6149611910913761 -0.7881542121237473; -0.5924183944939979 0.7462453123716437 0.677943266145989 0.3686042760552428; -0.6149611910913761 0.677943266145989 0.5551828292680825 0.18028474074611434; -0.7881542121237473 0.3686042760552428 0.18028474074611434 0.06631482925856158]
+----- stdout -----
 
-UndefVarError: `x` not defined in `Main`
+------------------
+
+UndefVarError: `det` not defined in `Main`
 Suggestion: check for spelling errors or missing imports.
+Hint: a global variable of this name may be made accessible by importing LinearAlgebra in the current active module Main
 
 Stacktrace:
  [1] top-level scope
-   @ In[7]:2
+   @ In[20]:4
 
