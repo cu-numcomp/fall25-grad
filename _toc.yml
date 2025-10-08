@@ -26,3 +26,4 @@ chapters:
   - file: slides/2025-10-01-gmres.ipynb
   - file: slides/2025-10-03-svd.ipynb
   - file: slides/2025-10-06-low-rank.ipynb
+  - file: slides/2025-10-08-interpolation.ipynb
