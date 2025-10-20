@@ -30,3 +30,5 @@ chapters:
   - file: slides/2025-10-10-interpolation2.ipynb
   - file: slides/2025-10-13-splines.ipynb
   - file: slides/2025-10-15-higher-dimensions.ipynb
+  - file: slides/2025-10-17-noisy-data.ipynb
+  - file: slides/2025-10-20-regression.ipynb
