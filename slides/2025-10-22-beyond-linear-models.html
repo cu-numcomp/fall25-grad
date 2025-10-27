@@ -63,6 +63,7 @@
     <link rel="icon" href="../_static/cu-numcomp-square.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2025-10-24 Gradient Descent" href="2025-10-24-gradient-descent.html" />
     <link rel="prev" title="2025-10-20 Regression" href="2025-10-20-regression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -538,6 +539,34 @@
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="2025-10-24-gradient-descent.html">2025-10-24 Gradient Descent</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="2025-10-27-nonlinear-regression.html">2025-10-27 Nonlinear Regression</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </ul>
 </details></li>
 </ul>
@@ -965,7 +994,7 @@ More complex models are more capable of expressing the underlying function <span
 \[ V(x) c \approx y \]</div>
 <p>where the left hand side is linear in <span class="math notranslate nohighlight">\(c\)</span>.  In different notation, we are searching for a predictive model</p>
 <div class="math notranslate nohighlight">
-\[ f(x_i, c) \approx y_i \text{ for all $(x_i, y_i)$} \]</div>
+\[ \hat f(x_i, c) \approx y_i \text{ for all $(x_i, y_i)$} \]</div>
 <p>that is linear in <span class="math notranslate nohighlight">\(c\)</span>.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="standard-assumptions-for-regression">
@@ -993,8 +1022,8 @@ More complex models are more capable of expressing the underlying function <span
 
 which turns out to have a statistical interpretation when the noise is normally distributed.
 It is natural to define the error over the entire data set as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-45351a2e-5989-49f6-b183-b0ceea3f25b8">
-<span class="eqno">(17)<a class="headerlink" href="#equation-45351a2e-5989-49f6-b183-b0ceea3f25b8" title="Permalink to this equation">#</a></span>\[\begin{align} L(c; x, y) &amp;= \sum_i \frac 1 2 \big( f(x_i, c) - y_i \big)^2 \\
+<div class="amsmath math notranslate nohighlight" id="equation-6b4df93b-8cd0-44ec-8735-5f4d4fcbcd1f">
+<span class="eqno">(17)<a class="headerlink" href="#equation-6b4df93b-8cd0-44ec-8735-5f4d4fcbcd1f" title="Permalink to this equation">#</a></span>\[\begin{align} L(c; x, y) &amp;= \sum_i \frac 1 2 \big( f(x_i, c) - y_i \big)^2 \\
 &amp;= \frac 1 2 \lVert f(x, c) - y \rVert^2
 \end{align}\]</div>
 <p>where I’ve used the notation <span class="math notranslate nohighlight">\(f(x,c)\)</span> to mean the vector resulting from gathering all of the outputs <span class="math notranslate nohighlight">\(f(x_i, c)\)</span>.
@@ -1006,8 +1035,8 @@ The function <span class="math notranslate nohighlight">\(L\)</span> is called t
 <div class="math notranslate nohighlight">
 \[ f(\boldsymbol x) = x_1^2 + \sin(x_2) e^{3x_3} . \]</div>
 <p>We can evaluate the <strong>partial derivative</strong> by differentiating with respect to each component <span class="math notranslate nohighlight">\(x_i\)</span> separately (holding the others constant), and collect the result in a vector,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fca70ba9-ee9f-4f17-ab34-02581923fe78">
-<span class="eqno">(18)<a class="headerlink" href="#equation-fca70ba9-ee9f-4f17-ab34-02581923fe78" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e1b8bce8-deff-47d8-bcd7-65569933657d">
+<span class="eqno">(18)<a class="headerlink" href="#equation-e1b8bce8-deff-47d8-bcd7-65569933657d" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial f}{\partial \boldsymbol x} &amp;= \begin{bmatrix} \frac{\partial f}{\partial x_1} &amp; \frac{\partial f}{\partial x_2} &amp; \frac{\partial f}{\partial x_3} \end{bmatrix} \\
 &amp;= \begin{bmatrix} 2 x_1 &amp; \cos(x_2) e^{3 x_3} &amp; 3 \sin(x_2) e^{3 x_3} \end{bmatrix}.
 \end{align}\]</div>
@@ -1018,8 +1047,8 @@ The function <span class="math notranslate nohighlight">\(L\)</span> is called t
 <div class="math notranslate nohighlight">
 \[\begin{split} \boldsymbol f(\boldsymbol x) = \begin{bmatrix} x_1^2 + \sin(x_2) e^{3x_3} \\ x_1 x_2^2 / x_3 \end{bmatrix} . \end{split}\]</div>
 <p>and write the derivative as a matrix,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89baa7e4-5abf-4d31-993d-fa0ed188d591">
-<span class="eqno">(19)<a class="headerlink" href="#equation-89baa7e4-5abf-4d31-993d-fa0ed188d591" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ee88852c-76e1-45c5-8d28-7cdfca643bf9">
+<span class="eqno">(19)<a class="headerlink" href="#equation-ee88852c-76e1-45c5-8d28-7cdfca643bf9" title="Permalink to this equation">#</a></span>\[\begin{align}
 \frac{\partial \boldsymbol f}{\partial \boldsymbol x} &amp;=
 \begin{bmatrix} \frac{\partial f_1}{\partial x_1} &amp; \frac{\partial f_1}{\partial x_2} &amp; \frac{\partial f_1}{\partial x_3} \\
 \frac{\partial f_2}{\partial x_1} &amp; \frac{\partial f_2}{\partial x_2} &amp; \frac{\partial f_2}{\partial x_3} \\
@@ -1092,8 +1121,8 @@ x_2^2 / x_3 &amp; 2 x_1 x_2 / x_3 &amp; -x_1 x_2^2 / x_3^2
 \[ L(c; x, y) = \frac 1 2 \lVert f(x, c) - y \rVert^2 = \frac 1 2 \sum_i (f(x_i,c) - y_i)^2 \]</div>
 
 term-by-term as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-97fa6e85-7823-4361-904f-1a4ccfbe4c63">
-<span class="eqno">(20)<a class="headerlink" href="#equation-97fa6e85-7823-4361-904f-1a4ccfbe4c63" title="Permalink to this equation">#</a></span>\[\begin{align} \nabla_c L(c; x,y) = \frac{\partial L(c; x,y)}{\partial c} &amp;= \sum_i \big( f(x_i, c) - y_i \big) \frac{\partial f(x_i, c)}{\partial c} \\
+<div class="amsmath math notranslate nohighlight" id="equation-ce3bab0e-e9bb-426e-b450-71f9ba649f47">
+<span class="eqno">(20)<a class="headerlink" href="#equation-ce3bab0e-e9bb-426e-b450-71f9ba649f47" title="Permalink to this equation">#</a></span>\[\begin{align} \nabla_c L(c; x,y) = \frac{\partial L(c; x,y)}{\partial c} &amp;= \sum_i \big( f(x_i, c) - y_i \big) \frac{\partial f(x_i, c)}{\partial c} \\
 &amp;= \sum_i \big( f(x_i, c) - y_i \big) V(x_i)
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(V(x_i)\)</span> is the <span class="math notranslate nohighlight">\(i\)</span>th row of <span class="math notranslate nohighlight">\(V(x)\)</span>.</p>
@@ -1101,8 +1130,8 @@ term-by-term as</p>
 <section class="tex2jax_ignore mathjax_ignore" id="alternative-derivative">
 <h1>Alternative derivative<a class="headerlink" href="#alternative-derivative" title="Link to this heading">#</a></h1>
 <p>Alternatively, we can take a more linear algebraic approach to write the same expression is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2db8c875-7af2-41f3-869c-96cf3126c461">
-<span class="eqno">(21)<a class="headerlink" href="#equation-2db8c875-7af2-41f3-869c-96cf3126c461" title="Permalink to this equation">#</a></span>\[\begin{align} \nabla_c L(c; x,y) &amp;= \big( f(x,c) - y \big)^T V(x) \\
+<div class="amsmath math notranslate nohighlight" id="equation-765aff48-8c61-499e-92b7-d0e9f6637c60">
+<span class="eqno">(21)<a class="headerlink" href="#equation-765aff48-8c61-499e-92b7-d0e9f6637c60" title="Permalink to this equation">#</a></span>\[\begin{align} \nabla_c L(c; x,y) &amp;= \big( f(x,c) - y \big)^T V(x) \\
 &amp;= \big(V(x) c - y \big)^T V(x) \\
 &amp;= V(x)^T \big( V(x) c - y \big) .
 \end{align}\]</div>
@@ -1152,6 +1181,15 @@ term-by-term as</p>
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">2025-10-20 Regression</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="2025-10-24-gradient-descent.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2025-10-24 Gradient Descent</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
