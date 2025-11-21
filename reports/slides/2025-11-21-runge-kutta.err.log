@@ -36,18 +36,21 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-f1(x) = exp(x) - 1
-y1 = f1(1e-8)]
+plot_stability(z -> rk_eff_stability(z, rk4), "RK4", xlims=(-2, 2), ylims=(-2, 2))
 ------------------
 
 
-ParseError:
-[90m# Error @ [0;0m]8;;file:///home/jed/cu/nc-25f/class/slides/In[6]#2:14\[90mIn[6]:2:14[0;0m]8;;\
-f1(x) = exp(x) - 1
-y1 = f1(1e-8)[48;2;120;70;70m][0;0m
-[90m#            ╙ ── [0;0m[91mextra tokens after end of expression[0;0m
+MethodError: no method matching plot_stability(::var"#39#40", ::String; xlims::Tuple{Int64, Int64}, ylims::Tuple{Int64, Int64})
+This error has been manually thrown, explicitly, so the method may exist but be intentionally marked as unimplemented.
+
+[0mClosest candidates are:
+[0m  plot_stability(::Any, ::Any; xlim, ylim)[91m got unsupported keyword arguments "xlims", "ylims"[39m
+[0m[90m   @[39m [35mMain[39m [90m[4mIn[1]:6[24m[39m
+
 
 Stacktrace:
- [1] top-level scope
-[90m   @[39m [90m[4mIn[6]:2[24m[39m
+ [1] [0m[1mkwerr[22m[0m[1m([22m::[0m@NamedTuple[90m{xlims::Tuple{Int64, Int64}, ylims::Tuple{Int64, Int64}}[39m, ::[0mFunction, ::[0mFunction, ::[0mString[0m[1m)[22m
+[90m   @[39m [90mBase[39m [90m./[39m[90m[4merror.jl:165[24m[39m
+ [2] top-level scope
+[90m   @[39m [90m[4mIn[25]:1[24m[39m
 
